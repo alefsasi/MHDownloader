@@ -85,8 +85,8 @@ namespace MHostDownlaoder
             Console.WriteLine($"------------------------------------------------------");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"0 - Todos capítulos de {manga.InnerText}");
-
-            var chapters = _mangaHost.MangaPage(manga.GetAttributeValue("href", string.Empty));
+            var mangaLink = manga.GetAttributeValue("href", string.Empty); //tenho o link do manga
+            var chapters = _mangaHost.MangaPage(mangaLink);
 
 
             var i = 1;
@@ -144,7 +144,7 @@ namespace MHostDownlaoder
                 return;
             }
 
-            _mangaHost.DownloadManga(opcaoInt - 1, chapters.ToList(), chaptersName,manga.InnerText);
+            _mangaHost.DownloadManga(opcaoInt - 1, chapters.ToList(), chaptersName,manga.InnerText, mangaLink);
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Download Concluído....");
             Console.ReadLine();

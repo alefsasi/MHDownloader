@@ -12,7 +12,7 @@ namespace MHostDownlaoder
     {
 
         private static WebClient client;
-        public  static string[] ReplaceList = { "Cap&iacute;tulo", "Ler Online - ", "[]"};
+        public  static string[] ReplaceList = { "Cap&iacute;tulo", "Ler Online - ", "[]", "?"};
 
         public static WebClient GetWebClient()
         {
